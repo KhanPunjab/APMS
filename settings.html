@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سیٹنگز - علی پبلک ماڈل سکول</title>
+    
+    <style>
+        /* جمیل نوری نستعلیق فونٹ */
+        @import url('https://fonts.cdnfonts.com/css/jameel-noori-nastaleeq');
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Jameel Noori Nastaleeq', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        
+        body { background-color: #f0f4f8; padding-bottom: 80px; }
+
+        /* Top Header */
+        .header {
+            background: #1e88e5;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .header h2 { font-size: 22px; }
+        .back-btn { font-size: 24px; color: white; text-decoration: none; cursor: pointer; }
+
+        /* Profile Card */
+        .profile-card {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-top: 5px solid #1e88e5;
+        }
+        .avatar {
+            width: 80px;
+            height: 80px;
+            background: #e3f2fd;
+            color: #1e88e5;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            margin: 0 auto 10px auto;
+            border: 3px solid #1e88e5;
+        }
+        .profile-card h3 { font-size: 24px; color: #333; margin-bottom: 5px; }
+        .profile-card p { font-size: 16px; color: #777; }
+
+        /* Settings Menu */
+        .settings-menu { padding: 0 20px; }
+        
+        .menu-item {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: 0.2s;
+            text-decoration: none;
+            color: #333;
+        }
+        .menu-item:hover { background: #f9f9f9; }
+
+        .menu-icon {
+            width: 40px;
+            height: 40px;
+            background: #f0f4f8;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            margin-left: 15px; /* آئیکن کو دائیں طرف رکھنے کے لیے */
+            color: #1e88e5;
+        }
+
+        .menu-text { flex: 1; font-size: 18px; font-weight: bold; }
+        
+        .menu-arrow { color: #ccc; font-size: 20px; }
+
+        /* Logout Button Specific */
+        .menu-item.logout { color: #f44336; }
+        .menu-item.logout .menu-icon { background: #ffebee; color: #f44336; }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            z-index: 1000;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #777;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        .nav-item.active { color: #1e88e5; font-weight: bold; }
+        .nav-item .icon { font-size: 20px; margin-bottom: 3px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <a href="dashboard.html" class="back-btn">←</a>
+        <h2>سیٹنگز</h2>
+        <span></span>
+    </div>
+
+    <!-- Profile Card -->
+    <div class="profile-card">
+        <div class="avatar">👤</div>
+        <h3>احمد خان</h3>
+        <p>ایڈمن (Admin)</p>
+    </div>
+
+    <!-- Settings Menu -->
+    <div class="settings-menu">
+        
+        <!-- School Info -->
+        <a href="info.html" class="menu-item">
+            <div class="menu-icon">🏫</div>
+            <div class="menu-text">اسکول کی معلومات</div>
+            <div class="menu-arrow">←</div>
+        </a>
+
+        <!-- Change Logo -->
+        <div class="menu-item" onclick="alert('یہ فیچر جلد شامل کیا جائے گا!')">
+            <div class="menu-icon">🖼️</div>
+            <div class="menu-text">لوگو تبدیل کریں</div>
+            <div class="menu-arrow">←</div>
+        </div>
+
+        <!-- Change Password -->
+        <div class="menu-item" onclick="alert('یہ فیچر جلد شامل کیا جائے گا!')">
+            <div class="menu-icon">🔑</div>
+            <div class="menu-text">پاس ورڈ تبدیل کریں</div>
+            <div class="menu-arrow">←</div>
+        </div>
+
+        <!-- Notifications -->
+        <div class="menu-item" onclick="alert('نوٹیفیکیشن آن ہیں')">
+            <div class="menu-icon">🔔</div>
+            <div class="menu-text">نوٹیفیکیشن</div>
+            <div class="menu-arrow">←</div>
+        </div>
+
+        <!-- Login Details -->
+        <div class="menu-item" onclick="alert('آئی ڈی: admin@school.com')">
+            <div class="menu-icon">ℹ️</div>
+            <div class="menu-text">لاگ ان تفصیلات</div>
+            <div class="menu-arrow">←</div>
+        </div>
+
+        <!-- Logout -->
+        <div class="menu-item logout" onclick="logout()">
+            <div class="menu-icon">🚪</div>
+            <div class="menu-text">لاگ آؤٹ</div>
+            <div class="menu-arrow">←</div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <span class="icon">🏠</span>
+            <span>ہوم</span>
+        </a>
+        <a href="students.html" class="nav-item">
+            <span class="icon">👨‍🎓</span>
+            <span>طلباء</span>
+        </a>
+        <a href="attendance.html" class="nav-item">
+            <span class="icon">✅</span>
+            <span>حاضری</span>
+        </a>
+        <a href="notice.html" class="nav-item">
+            <span class="icon">📢</span>
+            <span>اعلانات</span>
+        </a>
+        <a href="settings.html" class="nav-item active">
+            <span class="icon">⚙️</span>
+            <span>سیٹنگز</span>
+        </a>
+    </div>
+
+    <!-- JavaScript for Logout -->
+    <script>
+        function logout() {
+            let confirmLogout = confirm("کیا آپ واقعی لاگ آؤٹ کرنا چاہتے ہیں؟");
+            if (confirmLogout) {
+                window.location.href = "index.html"; // واپس لاگ ان اسکرین پر
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS - علی پبلک ماڈل سکول</title>
+    
+    <style>
+        /* جمیل نوری نستعلیق فونٹ */
+        @import url('https://fonts.cdnfonts.com/css/jameel-noori-nastaleeq');
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Jameel Noori Nastaleeq', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        
+        body { background-color: #f0f4f8; padding-bottom: 80px; }
+
+        /* Top Header */
+        .header {
+            background: #1e88e5;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .header h2 { font-size: 22px; }
+        .back-btn { font-size: 24px; color: white; text-decoration: none; cursor: pointer; }
+
+        /* Main Container */
+        .container { padding: 20px; }
+
+        /* SMS Card */
+        .sms-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            border-right: 5px solid #1e88e5;
+        }
+
+        .sms-card h3 { font-size: 20px; color: #333; margin-bottom: 15px; }
+
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 18px; color: #555; margin-bottom: 5px; }
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+            background: #f9f9f9;
+            text-align: right;
+            outline: none;
+        }
+        .input-group textarea { height: 100px; resize: none; }
+
+        /* Send Button */
+        .send-btn {
+            width: 100%;
+            padding: 15px;
+            background: #1e88e5;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(30, 136, 229, 0.4);
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 10px;
+        }
+        .send-btn:hover { background: #1565c0; }
+
+        /* Absentee List */
+        .absent-list-title { font-size: 20px; color: #333; margin-bottom: 10px; padding-right: 10px; }
+        .absent-item {
+            background: white;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .absent-item span { font-size: 18px; color: #333; }
+        .absent-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #1e88e5;
+            cursor: pointer;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            z-index: 1000;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #777;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .nav-item.active { color: #1e88e5; font-weight: bold; }
+        .nav-item .icon { font-size: 22px; margin-bottom: 3px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <a href="attendance.html" class="back-btn">←</a>
+        <h2>غیر حاضر طلباء کیلئے SMS</h2>
+        <span></span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- SMS Form -->
+        <div class="sms-card">
+            <h3>والد کو میسج بھیجیں</h3>
+            
+            <div class="input-group">
+                <label>والد کا موبائل نمبر</label>
+                <input type="text" id="parentPhone" placeholder="0300-1234567">
+            </div>
+
+            <div class="input-group">
+                <label>پیغام</label>
+                <textarea id="smsMessage">محترم والد، آپ کا بچہ آج اسکول میں غیر حاضر رہا۔ براہ کرم اسکی وجہ اسکول انتظامیہ کو بتائیں۔ شکریہ - علی پبلک ماڈل سکول</textarea>
+            </div>
+
+            <button class="send-btn" onclick="sendSMS()">SMS بھیجیں</button>
+        </div>
+
+        <!-- Absent Students List -->
+        <div class="absent-list-title">آج کے غیر حاضر طلباء</div>
+        
+        <div class="absent-item">
+            <span>علی رضا (کلاس 4)</span>
+            <input type="checkbox" checked>
+        </div>
+        <div class="absent-item">
+            <span>حسن شاہ (کلاس 5)</span>
+            <input type="checkbox" checked>
+        </div>
+        <div class="absent-item">
+            <span>زینب ملک (کلاس 3)</span>
+            <input type="checkbox">
+        </div>
+
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <span class="icon">🏠</span>
+            <span>ہوم</span>
+        </a>
+        <a href="students.html" class="nav-item">
+            <span class="icon">👨‍🎓</span>
+            <span>طلباء</span>
+        </a>
+        <a href="attendance.html" class="nav-item">
+            <span class="icon">✅</span>
+            <span>حاضری</span>
+        </a>
+        <a href="sms.html" class="nav-item active">
+            <span class="icon">✉️</span>
+            <span>SMS</span>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function sendSMS() {
+            let phone = document.getElementById('parentPhone').value;
+            if(phone === "") {
+                alert("براہ کرم والد کا موبائل نمبر درج کریں!");
+            } else {
+                alert("SMS کامیابی سے بھیج دیا گیا: " + phone);
+                // یہاں ہم بعد میں اصلی SMS API کو جوڑیں گے
+            }
+        }
+    </script>
+
+</body>
+</html>

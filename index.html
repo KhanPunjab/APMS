@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Public Model School</title>
+    
+    <!-- Urdu Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS Code Yahan Hai -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Noto Nastaliq Urdu', sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Top Blue Area */
+        .top-wave {
+            width: 100%;
+            height: 45vh;
+            background: linear-gradient(135deg, #1e88e5, #1565c0);
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .school-logo {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .top-wave h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .top-wave p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .eng-name {
+            font-size: 10px !important;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* Login Card */
+        .login-card {
+            width: 90%;
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: -50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .login-card h2 {
+            text-align: center;
+            color: #1565c0;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+            text-align: right;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 14px;
+            background: #f9f9f9;
+            text-align: right;
+        }
+
+        .input-group input:focus {
+            border-color: #1e88e5;
+            outline: none;
+            background: white;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background: #1e88e5;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #1565c0;
+        }
+
+        .forgot-pass {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 15px;
+        }
+
+        .forgot-pass a {
+            color: #1e88e5;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Splash / Top Design Area -->
+    <div class="top-wave">
+        <div class="logo-area">
+            <!-- School Logo (Internet se aa raha hai) -->
+            <img src="https://cdn-icons-png.flaticon.com/512/2603/2603689.png" alt="School Logo" class="school-logo">
+            <h1>علی پبلک ماڈل سکول</h1>
+            <p>بستی ناہواولا نواں</p>
+            <p class="eng-name">ALI PUBLIC MODEL SCHOOL</p>
+        </div>
+    </div>
+
+    <!-- Login Card -->
+    <div class="login-card">
+        <h2>لاگ ان کریں</h2>
+        
+        <div class="input-group">
+            <label>ای میل / یوزر نیم</label>
+            <input type="text" placeholder="admin@school.com">
+        </div>
+
+        <div class="input-group">
+            <label>پاس ورڈ</label>
+            <input type="password" placeholder="........">
+        </div>
+
+        <button class="login-btn" onclick="login()">لاگ ان کریں</button>
+        
+        <p class="forgot-pass">پاس ورڈ بھول گئے؟ <a href="#">یہاں کلک کریں</a></p>
+    </div>
+
+    <script>
+        function login() {
+            alert("لاگ ان کا بٹن دب گیا! ابھی ہم اسے ڈیٹا بیس سے جوڑیں گے۔");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اعلانات - علی پبلک ماڈل سکول</title>
+    
+    <style>
+        /* جمیل نوری نستعلیق فونٹ */
+        @import url('https://fonts.cdnfonts.com/css/jameel-noori-nastaleeq');
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Jameel Noori Nastaleeq', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        
+        body { background-color: #f0f4f8; padding-bottom: 80px; }
+
+        /* Top Header */
+        .header {
+            background: #1e88e5;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .header h2 { font-size: 22px; }
+        .back-btn, .add-btn { font-size: 24px; color: white; text-decoration: none; cursor: pointer; font-weight: bold; }
+
+        /* Notice List */
+        .notice-list { padding: 20px; }
+        
+        .notice-card {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 15px;
+            border-right: 5px solid #ff9800; /* سائیڈ پر نارنجی لائن */
+        }
+
+        .notice-icon {
+            background: #fff3e0;
+            color: #ff9800;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .notice-content { flex: 1; }
+        
+        .notice-content h3 { font-size: 20px; color: #333; margin-bottom: 5px; line-height: 1.8; }
+        
+        .notice-date {
+            font-size: 14px;
+            color: #1e88e5;
+            background: #e3f2fd;
+            padding: 3px 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        
+        .notice-content p { font-size: 16px; color: #555; line-height: 1.6; }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            z-index: 1000;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #777;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        .nav-item.active { color: #1e88e5; font-weight: bold; }
+        .nav-item .icon { font-size: 20px; margin-bottom: 3px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <a href="dashboard.html" class="back-btn">←</a>
+        <h2>اعلانات</h2>
+        <span class="add-btn">+</span>
+    </div>
+
+    <!-- Notice List -->
+    <div class="notice-list">
+        
+        <!-- اعلان 1 -->
+        <div class="notice-card">
+            <div class="notice-icon">❄️</div>
+            <div class="notice-content">
+                <h3>سرمائی تعطیلات کا اعلان</h3>
+                <span class="notice-date">15 دسمبر 2025</span>
+                <p>اسکول 20 دسمبر سے 5 جنوری تک سرمائی تعطیلات کے لیے بند رہے گا۔ تمام طلباء و اساتذہ سے گزارش ہے کہ وہ اس دوران اپنی حفاظت کا خیال رکھیں۔</p>
+            </div>
+        </div>
+
+        <!-- اعلان 2 -->
+        <div class="notice-card">
+            <div class="notice-icon">📝</div>
+            <div class="notice-content">
+                <h3>سالانہ امتحانات کا شیڈول</h3>
+                <span class="notice-date">10 دسمبر 2025</span>
+                <p>سالانہ امتحانات 15 جنوری 2026 سے شروع ہوں گے۔ تمام طلباء امتحان کی تیاری مکمل کر لیں۔ تفصیلی شیڈول اسکول کے نوٹس بورڈ پر آویزاں کر دیا گیا ہے۔</p>
+            </div>
+        </div>
+
+        <!-- اعلان 3 -->
+        <div class="notice-card">
+            <div class="notice-icon">👨‍👩‍👧</div>
+            <div class="notice-content">
+                <h3>والدین اساتذہ میٹنگ</h3>
+                <span class="notice-date">5 دسمبر 2025</span>
+                <p>والدین اساتذہ میٹنگ 8 دسمبر بروز اتوار صبح 10 بجے منعقد ہوگی۔ تمام والدین سے گزارش ہے کہ وہ اپنے بچوں کی کارکردگی کے بارے میں جاننے کے لیے ضرور تشریف لائیں۔</p>
+            </div>
+        </div>
+
+        <!-- اعلان 4 -->
+        <div class="notice-card">
+            <div class="notice-icon">🎉</div>
+            <div class="notice-content">
+                <h3>یومِ اقبال کی تقریب</h3>
+                <span class="notice-date">1 دسمبر 2025</span>
+                <p>یومِ اقبال کے موقع پر اسکول میں ایک خصوصی تقریب منعقد کی جائے گی، جس میں طلباء ملی نغمے اور تقاریر پیش کریں گے۔</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <span class="icon">🏠</span>
+            <span>ہوم</span>
+        </a>
+        <a href="students.html" class="nav-item">
+            <span class="icon">👨‍🎓</span>
+            <span>طلباء</span>
+        </a>
+        <a href="attendance.html" class="nav-item">
+            <span class="icon">✅</span>
+            <span>حاضری</span>
+        </a>
+        <a href="result.html" class="nav-item">
+            <span class="icon">📄</span>
+            <span>نتیجہ</span>
+        </a>
+        <a href="notice.html" class="nav-item active">
+            <span class="icon">📢</span>
+            <span>اعلانات</span>
+        </a>
+    </div>
+
+</body>
+</html>

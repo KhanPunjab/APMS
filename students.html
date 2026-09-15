@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلباء - علی پبلک ماڈل سکول</title>
+    
+    <style>
+        /* جمیل نوری نستعلیق فونٹ */
+        @import url('https://fonts.cdnfonts.com/css/jameel-noori-nastaleeq');
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Jameel Noori Nastaleeq', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        
+        body { background-color: #f0f4f8; padding-bottom: 70px; }
+
+        /* Top Header */
+        .header {
+            background: #1e88e5;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .header h2 { font-size: 22px; }
+        .back-btn, .add-btn { font-size: 24px; color: white; text-decoration: none; cursor: pointer; }
+
+        /* Search Bar */
+        .search-box {
+            padding: 20px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            font-size: 16px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: right;
+        }
+
+        /* Student List */
+        .student-list { padding: 0 20px; }
+        
+        .student-card {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-right: 5px solid #1e88e5; /* Side par blue line */
+        }
+
+        .student-avatar {
+            width: 50px;
+            height: 50px;
+            background: #e3f2fd;
+            color: #1e88e5;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .student-info { flex: 1; }
+        .student-info h3 { font-size: 20px; color: #333; margin-bottom: 5px; line-height: 1.8; }
+        .student-info p { font-size: 16px; color: #777; line-height: 1.6; }
+
+        .arrow-icon { color: #ccc; font-size: 20px; }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #777;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .nav-item.active { color: #1e88e5; font-weight: bold; }
+        .nav-item .icon { font-size: 20px; margin-bottom: 3px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <a href="dashboard.html" class="back-btn">←</a>
+        <h2>طلباء کی ریکارڈ</h2>
+        <span class="add-btn">+</span>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-box">
+        <input type="text" placeholder="طلباء تلاش کریں...">
+    </div>
+
+    <!-- Student List -->
+    <div class="student-list">
+        
+        <!-- Student 1 -->
+        <div class="student-card">
+            <div class="student-avatar">ا</div>
+            <div class="student-info">
+                <h3>احمد خان</h3>
+                <p>رول نمبر: 12 | کلاس: 3</p>
+                <p>والد کا نام: محمد خان</p>
+            </div>
+            <div class="arrow-icon">→</div>
+        </div>
+
+        <!-- Student 2 -->
+        <div class="student-card">
+            <div class="student-avatar">ف</div>
+            <div class="student-info">
+                <h3>فاطمہ بی بی</h3>
+                <p>رول نمبر: 12 | کلاس: 3</p>
+                <p>والد کا نام: سلیم احمد</p>
+            </div>
+            <div class="arrow-icon">→</div>
+        </div>
+
+        <!-- Student 3 -->
+        <div class="student-card">
+            <div class="student-avatar">ع</div>
+            <div class="student-info">
+                <h3>علی رضا</h3>
+                <p>رول نمبر: 14 | کلاس: 4</p>
+                <p>والد کا نام: عبدالرشید</p>
+            </div>
+            <div class="arrow-icon">→</div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <span class="icon">🏠</span>
+            <span>ہوم</span>
+        </a>
+        <a href="students.html" class="nav-item active">
+            <span class="icon">👨‍🎓</span>
+            <span>طلباء</span>
+        </a>
+        <a href="#" class="nav-item">
+            <span class="icon">✅</span>
+            <span>حاضری</span>
+        </a>
+        <a href="#" class="nav-item">
+            <span class="icon">⚙️</span>
+            <span>سیٹنگز</span>
+        </a>
+    </div>
+
+</body>
+</html>
