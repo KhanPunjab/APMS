@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>علی پبلک ماڈل سکول</title>
+    <link href="https://fonts.cdnfonts.com/css/jameel-noori-nastaleeq" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Jameel Noori Nastaleeq', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f0f4f8; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        
+        /* Top Blue Area */
+        .top-wave { width: 100%; height: 45vh; background: linear-gradient(135deg, #1e88e5, #1565c0); border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; display: flex; justify-content: center; align-items: center; text-align: center; color: white; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); position: relative; }
+        .logo-area { display: flex; flex-direction: column; align-items: center; }
+        .school-logo { width: 100px; height: 100px; background: white; border-radius: 50%; padding: 5px; margin-bottom: 10px; object-fit: contain; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .top-wave h1 { font-size: 28px; font-weight: 700; margin-bottom: 5px; }
+        .top-wave p { font-size: 16px; opacity: 0.9; }
+        .eng-name { font-size: 12px !important; letter-spacing: 1px; margin-top: 5px; }
+
+        /* Language Buttons */
+        .lang-buttons { position: absolute; top: 20px; right: 20px; display: flex; gap: 8px; }
+        .lang-btn { background: rgba(255,255,255,0.2); border: 1px solid white; color: white; padding: 5px 12px; border-radius: 20px; font-size: 14px; cursor: pointer; }
+        .lang-btn.active { background: white; color: #1565c0; font-weight: bold; }
+
+        /* Login Card */
+        .login-card { width: 90%; background: white; border-radius: 20px; padding: 25px; margin-top: -50px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative; z-index: 5; }
+        .login-card h2 { text-align: center; color: #1565c0; margin-bottom: 20px; font-size: 28px; }
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 18px; color: #555; margin-bottom: 5px; text-align: right; }
+        
+        .password-wrapper { position: relative; display: flex; align-items: center; }
+        .password-wrapper input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 10px; font-size: 16px; background: #f9f9f9; text-align: right; outline: none; padding-left: 40px; }
+        .password-wrapper input:focus { border-color: #1e88e5; background: white; }
+        .toggle-eye { position: absolute; left: 10px; cursor: pointer; font-size: 18px; color: #777; user-select: none; }
+        
+        .input-group input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 10px; font-size: 16px; background: #f9f9f9; text-align: right; outline: none; }
+        .input-group input:focus { border-color: #1e88e5; background: white; }
+        
+        .login-btn { width: 100%; padding: 14px; background: #1e88e5; color: white; border: none; border-radius: 10px; font-size: 22px; font-weight: bold; cursor: pointer; margin-top: 10px; transition: 0.3s; }
+        .login-btn:hover { background: #1565c0; }
+        .forgot-pass { text-align: center; font-size: 16px; color: #777; margin-top: 15px; }
+        .forgot-pass a { color: #1e88e5; text-decoration: none; cursor: pointer; }
+
+        /* Sign Up Section */
+        .signup-section { margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ccc; display: none; }
+        .signup-section h3 { text-align: center; color: #1565c0; margin-bottom: 15px; }
+        .signup-btn { width: 100%; padding: 12px; background: #4caf50; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        .signup-btn:hover { background: #388e3c; }
+
+        /* Copyright Footer */
+        .footer { text-align: center; margin-top: 20px; margin-bottom: 20px; padding: 0 20px; }
+        .footer .dev { font-size: 13px; color: #1e88e5; font-weight: bold; }
+        .footer .copy { font-size: 11px; color: #888; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <!-- Top Blue Area with Logo -->
+    <div class="top-wave">
+        <div class="lang-buttons">
+            <button class="lang-btn active" onclick="setLanguage('ur')">اردو</button>
+            <button class="lang-btn" onclick="setLanguage('en')">English</button>
+        </div>
+        <div class="logo-area">
+            <img src="logo.jpg" alt="School Logo" class="school-logo">
+            <h1 id="schoolName">علی پبلک ماڈل سکول</h1>
+            <p id="schoolAddress">بستی ناہواولا نواں</p>
+            <p class="eng-name">ALI PUBLIC MODEL SCHOOL</p>
+        </div>
+    </div>
+
+    <!-- Login Card -->
+    <div class="login-card">
+        <h2 id="loginTitle">لاگ ان کریں</h2>
+        
+        <div class="input-group">
+            <label id="emailLabel">ای میل</label>
+            <input type="text" id="username" placeholder="apms@ali.com">
+        </div>
+
+        <div class="input-group">
+            <label id="passLabel">پاس ورڈ</label>
+            <div class="password-wrapper">
+                <input type="password" id="password" placeholder="........">
+                <span class="toggle-eye" onclick="togglePassword()">👁️</span>
+            </div>
+        </div>
+
+        <button class="login-btn" onclick="login()" id="loginBtn">لاگ ان کریں</button>
+        
+        <p class="forgot-pass">
+            <span id="forgotText">نیا اکاؤنٹ بنانا ہے؟</span> 
+            <a onclick="toggleSignup()" id="signupLink">یہاں کلک کریں</a>
+        </p>
+
+        <!-- Sign Up Section -->
+        <div class="signup-section" id="signupSection">
+            <h3 id="signupTitle">نیا اکاؤنٹ بنائیں</h3>
+            <div class="input-group">
+                <label id="newEmailLabel">نیا ای میل</label>
+                <input type="text" id="newEmail" placeholder="new@school.com">
+            </div>
+            <div class="input-group">
+                <label id="newPassLabel">نیا پاس ورڈ</label>
+                <input type="password" id="newPassword" placeholder="........">
+            </div>
+            <button class="signup-btn" onclick="signup()" id="signupBtn">اکاؤنٹ بنائیں</button>
+        </div>
+    </div>
+
+    <!-- Copyright Footer -->
+    <div class="footer">
+        <p class="dev">DEVELOPED BY: KHALIL DEVELOPER</p>
+        <p class="copy">COPYRIGHT © 2025 ALI PUBLIC MODEL SCHOOL BASTI NAHO WALA NAWAN</p>
+        <p class="copy">ALL RIGHTS RESERVED.</p>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDHS3lvjt8W8mxaJR-WHcLQP1djYFlY2uU",
+            authDomain: "ali-school-app.firebaseapp.com",
+            projectId: "ali-school-app",
+            storageBucket: "ali-school-app.firebasestorage.app",
+            messagingSenderId: "229544574495",
+            appId: "1:229544574495:web:3dc249e8306c69fdb81f2a",
+            measurementId: "G-C3JFZWPKCB"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // ===== LOGIN FUNCTION =====
+        window.login = function() {
+            var email = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if(email === "" || password === "") {
+                alert("براہ کرم ای میل اور پاس ورڈ دونوں درج کریں!");
+                return;
+            }
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    window.location.href = "dashboard.html";
+                })
+                .catch((error) => {
+                    alert("غلط ای میل یا پاس ورڈ! براہ کرم دوبارہ کوشش کریں۔");
+                });
+        }
+
+        // ===== SIGN UP FUNCTION =====
+        window.signup = function() {
+            var newEmail = document.getElementById("newEmail").value;
+            var newPassword = document.getElementById("newPassword").value;
+
+            if(newEmail === "" || newPassword === "") {
+                alert("براہ کرم نیا ای میل اور پاس ورڈ درج کریں!");
+                return;
+            }
+            if(newPassword.length < 6) {
+                alert("پاس ورڈ کم از کم 6 حروف کا ہونا چاہیے!");
+                return;
+            }
+
+            createUserWithEmailAndPassword(auth, newEmail, newPassword)
+                .then((userCredential) => {
+                    alert("اکاؤنٹ کامیابی سے بن گیا! اب آپ لاگ ان کر سکتے ہیں۔");
+                    document.getElementById("signupSection").style.display = "none";
+                    document.getElementById("signupLink").textContent = "یہاں کلک کریں";
+                    document.getElementById("username").value = newEmail;
+                })
+                .catch((error) => {
+                    alert("یہ ای میل پہلے سے استعمال ہو رہی ہے یا غلط ہے!");
+                });
+        }
+
+        // ===== TOGGLE SIGNUP =====
+        window.toggleSignup = function() {
+            var section = document.getElementById("signupSection");
+            var link = document.getElementById("signupLink");
+            if(section.style.display === "none" || section.style.display === "") {
+                section.style.display = "block";
+                link.textContent = "لاگ ان پر واپس جائیں";
+            } else {
+                section.style.display = "none";
+                link.textContent = "یہاں کلک کریں";
+            }
+        }
+
+        // ===== TOGGLE PASSWORD =====
+        window.togglePassword = function() {
+            var passwordField = document.getElementById("password");
+            var eyeIcon = document.querySelector(".toggle-eye");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                eyeIcon.textContent = "🙈";
+            } else {
+                passwordField.type = "password";
+                eyeIcon.textContent = "👁️";
+            }
+        }
+
+        // ===== LANGUAGE SWITCHER =====
+        window.setLanguage = function(lang) {
+            var title = document.getElementById("loginTitle");
+            var emailLabel = document.getElementById("emailLabel");
+            var passLabel = document.getElementById("passLabel");
+            var loginBtn = document.getElementById("loginBtn");
+            var schoolName = document.getElementById("schoolName");
+            var schoolAddress = document.getElementById("schoolAddress");
+            var forgotText = document.getElementById("forgotText");
+            var signupTitle = document.getElementById("signupTitle");
+            var newEmailLabel = document.getElementById("newEmailLabel");
+            var newPassLabel = document.getElementById("newPassLabel");
+            var signupBtn = document.getElementById("signupBtn");
+
+            if(lang === 'en') {
+                title.textContent = "Login";
+                emailLabel.textContent = "Email";
+                passLabel.textContent = "Password";
+                loginBtn.textContent = "Login";
+                schoolName.textContent = "Ali Public Model School";
+                schoolAddress.textContent = "Basti Naho Wala Nawan";
+                forgotText.textContent = "Don't have an account?";
+                signupTitle.textContent = "Create New Account";
+                newEmailLabel.textContent = "New Email";
+                newPassLabel.textContent = "New Password";
+                signupBtn.textContent = "Create Account";
+                document.body.style.direction = "ltr";
+                document.querySelectorAll('.input-group label, .input-group input').forEach(el => el.style.textAlign = "left");
+            } else {
+                title.textContent = "لاگ ان کریں";
+                emailLabel.textContent = "ای میل";
+                passLabel.textContent = "پاس ورڈ";
+                loginBtn.textContent = "لاگ ان کریں";
+                schoolName.textContent = "علی پبلک ماڈل سکول";
+                schoolAddress.textContent = "بستی ناہواولا نواں";
+                forgotText.textContent = "نیا اکاؤنٹ بنانا ہے؟";
+                signupTitle.textContent = "نیا اکاؤنٹ بنائیں";
+                newEmailLabel.textContent = "نیا ای میل";
+                newPassLabel.textContent = "نیا پاس ورڈ";
+                signupBtn.textContent = "اکاؤنٹ بنائیں";
+                document.body.style.direction = "rtl";
+                document.querySelectorAll('.input-group label, .input-group input').forEach(el => el.style.textAlign = "right");
+            }
+        }
+    </script>
+
+</body>
+</html>
