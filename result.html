@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتیجہ کارڈ - علی پبلک ماڈل سکول</title>
+    
+    <style>
+        /* جمیل نوری نستعلیق فونٹ */
+        @import url('https://fonts.cdnfonts.com/css/jameel-noori-nastaleeq');
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Jameel Noori Nastaleeq', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        
+        body { background-color: #f0f4f8; padding-bottom: 80px; }
+
+        /* Top Header */
+        .header {
+            background: #1e88e5;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .header h2 { font-size: 22px; }
+        .back-btn { font-size: 24px; color: white; text-decoration: none; cursor: pointer; }
+
+        /* Result Card Container */
+        .result-card {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #1e88e5;
+        }
+
+        /* School Header in Card */
+        .school-header {
+            text-align: center;
+            border-bottom: 2px dashed #ccc;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .school-header h1 { font-size: 26px; color: #1e88e5; margin-bottom: 5px; }
+        .school-header p { font-size: 16px; color: #555; }
+
+        /* Student Info (Updated Layout) */
+        .student-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #333;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 5px;
+        }
+        .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+        /* Marks Table */
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: center; font-size: 18px; }
+        th { background-color: #1e88e5; color: white; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+
+        /* Summary Section */
+        .summary {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: bold;
+            color: #1565c0;
+            margin-bottom: 20px;
+        }
+
+        /* Print Button */
+        .print-btn {
+            width: 100%;
+            padding: 15px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .print-btn:hover { background: #388e3c; }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            z-index: 1000;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #777;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .nav-item.active { color: #1e88e5; font-weight: bold; }
+        .nav-item .icon { font-size: 20px; margin-bottom: 3px; }
+
+        /* Print Settings (Jab PDF banayein to sirf result card nazar aaye) */
+        @media print {
+            .header, .bottom-nav, .print-btn { display: none; }
+            body { background: white; padding: 0; }
+            .result-card { margin: 0; border: none; box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <a href="students.html" class="back-btn">←</a>
+        <h2>نتیجہ کارڈ</h2>
+        <span></span>
+    </div>
+
+    <!-- Result Card -->
+    <div class="result-card">
+        
+        <!-- School Header -->
+        <div class="school-header">
+            <h1>علی پبلک ماڈل سکول</h1>
+            <p>بستی ناہواولا نواں</p>
+            <p>سالانہ امتحان 2025</p>
+        </div>
+
+        <!-- Student Info -->
+        <div class="student-info">
+            <div class="info-row">
+                <span><b>نام:</b> احمد خان</span>
+                <span><b>والد کا نام:</b> محمد خان</span>
+            </div>
+            <div class="info-row">
+                <span><b>کلاس:</b> 5</span>
+                <span><b>رول نمبر:</b> 12</span>
+            </div>
+        </div>
+
+        <!-- Marks Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>مضمون</th>
+                    <th>کل نمبر</th>
+                    <th>حاصل کردہ نمبر</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>اردو</td><td>100</td><td>88</td></tr>
+                <tr><td>انگریزی</td><td>100</td><td>92</td></tr>
+                <tr><td>ریاضی</td><td>100</td><td>80</td></tr>
+                <tr><td>سائنس</td><td>100</td><td>85</td></tr>
+                <tr><td>اسلامیات</td><td>100</td><td>76</td></tr>
+            </tbody>
+        </table>
+
+        <!-- Summary -->
+        <div class="summary">
+            <span>کل نمبر: 500</span>
+            <span>حاصل کردہ: 421</span>
+            <span>فیصد: 84%</span>
+        </div>
+
+        <!-- Print Button -->
+        <button class="print-btn" onclick="window.print()">PDF ڈاؤن لوڈ کریں / پرنٹ کریں</button>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <span class="icon">🏠</span>
+            <span>ہوم</span>
+        </a>
+        <a href="students.html" class="nav-item">
+            <span class="icon">👨‍🎓</span>
+            <span>طلباء</span>
+        </a>
+        <a href="attendance.html" class="nav-item">
+            <span class="icon">✅</span>
+            <span>حاضری</span>
+        </a>
+        <a href="result.html" class="nav-item active">
+            <span class="icon">📄</span>
+            <span>نتیجہ</span>
+        </a>
+    </div>
+
+</body>
+</html>
