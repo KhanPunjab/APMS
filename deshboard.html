@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ڈیش بورڈ - علی پبلک ماڈل سکول</title>
+    
+    <style>
+        /* جمیل نوری نستعلیق فونٹ */
+        @import url('https://fonts.cdnfonts.com/css/jameel-noori-nastaleeq');
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Jameel Noori Nastaleeq', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        
+        body { background-color: #f0f4f8; padding-bottom: 80px; }
+
+        /* Top Header */
+        .header {
+            background: #1e88e5;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .header h2 { font-size: 22px; }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding: 20px;
+            margin-top: 10px;
+        }
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .stat-card .icon { font-size: 30px; margin-bottom: 10px; }
+        .stat-card h3 { font-size: 18px; color: #555; margin-bottom: 5px; }
+        .stat-card .number { font-size: 28px; font-weight: bold; color: #1e88e5; }
+        
+        .card-blue .icon { color: #1e88e5; }
+        .card-green .icon { color: #4caf50; }
+        .card-purple .icon { color: #9c27b0; }
+        .card-orange .icon { color: #ff9800; }
+
+        /* Recent Activity */
+        .section-title { padding: 0 20px; font-size: 20px; font-weight: bold; color: #333; margin-bottom: 10px; }
+        .activity-list { padding: 0 20px; }
+        .activity-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .activity-icon { background: #e3f2fd; color: #1e88e5; padding: 10px; border-radius: 50%; }
+        .activity-text h4 { font-size: 18px; color: #333; }
+        .activity-text p { font-size: 14px; color: #777; }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            z-index: 1000;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #777;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        .nav-item.active { color: #1e88e5; font-weight: bold; }
+        .nav-item .icon { font-size: 20px; margin-bottom: 3px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div>
+            <h2>السلام علیکم، ایڈمن</h2>
+            <p style="font-size: 14px; opacity: 0.9;">علی پبلک ماڈل سکول</p>
+        </div>
+        <div class="header-icons">
+            <span>🔔</span>
+        </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+        <div class="stat-card card-blue">
+            <div class="icon">👨‍🎓</div>
+            <h3>کل طلبا</h3>
+            <div class="number">248</div>
+        </div>
+        <div class="stat-card card-green">
+            <div class="icon">👨‍🏫</div>
+            <h3>کل اساتذہ</h3>
+            <div class="number">18</div>
+        </div>
+        <div class="stat-card card-purple">
+            <div class="icon">🏫</div>
+            <h3>کلاسز</h3>
+            <div class="number">10</div>
+        </div>
+        <div class="stat-card card-orange">
+            <div class="icon">📋</div>
+            <h3>سیکشنز</h3>
+            <div class="number">12</div>
+        </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="section-title">تازہ سرگرمیاں</div>
+    <div class="activity-list">
+        <div class="activity-item">
+            <div class="activity-icon">📢</div>
+            <div class="activity-text">
+                <h4>نیا اعلان شامل کیا گیا</h4>
+                <p>آج 10:24 AM</p>
+            </div>
+        </div>
+        <div class="activity-item">
+            <div class="activity-icon">✅</div>
+            <div class="activity-text">
+                <h4>کلاس 3 کی حاضری لگ گئی</h4>
+                <p>آج 09:45 AM</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <a href="dashboard.html" class="nav-item active">
+            <span class="icon">🏠</span>
+            <span>ہوم</span>
+        </a>
+        <a href="students.html" class="nav-item">
+            <span class="icon">👨‍🎓</span>
+            <span>طلباء</span>
+        </a>
+        <a href="attendance.html" class="nav-item">
+            <span class="icon">✅</span>
+            <span>حاضری</span>
+        </a>
+        <a href="result.html" class="nav-item">
+            <span class="icon">📄</span>
+            <span>نتیجہ</span>
+        </a>
+        <a href="settings.html" class="nav-item">
+            <span class="icon">⚙️</span>
+            <span>سیٹنگز</span>
+        </a>
+    </div>
+
+</body>
+</html>
